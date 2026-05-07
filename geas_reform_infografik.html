@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEAS-Reform 2024 – Infografik</title>
+<style>
+  :root {
+    --eu-blue: #003399;
+    --eu-blue-dark: #001f6b;
+    --eu-blue-mid: #1a4db0;
+    --eu-blue-light: #dce8f7;
+    --eu-blue-pale: #eef3fb;
+    --eu-gold: #FFCC00;
+    --eu-gold-dark: #c49a00;
+    --text: #0d1b3e;
+    --text-mid: #3a4a70;
+    --text-light: #6b7a9a;
+    --border: #c8d6ee;
+    --border-light: #e2ecf7;
+    --white: #ffffff;
+    --bg: #f5f8ff;
+    --green: #1a7a4a;
+    --green-light: #e8f5ed;
+    --green-border: #a3d4b8;
+    --red: #9b2020;
+    --red-light: #fdf0f0;
+    --red-border: #e8b4b4;
+    --amber: #7a4a00;
+    --amber-light: #fff8e6;
+    --amber-border: #e8c870;
+    --coral: #7a2a00;
+    --coral-light: #fff0ea;
+    --coral-border: #e8b090;
+    --purple: #4a2080;
+    --purple-light: #f0ebff;
+    --purple-border: #c0a8e8;
+    --teal: #006b6b;
+    --teal-light: #e6f7f7;
+    --teal-border: #80cccc;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--eu-blue);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .header-logo {
+    background: #fff;
+    border-radius: 5px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+  }
+  .header-logo img { height: 40px; width: auto; display: block; }
+  .header-title {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .03em;
+  }
+  .header-right {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    text-align: right;
+    line-height: 1.4;
+  }
+  .eu-stars {
+    font-size: 11px;
+    color: var(--eu-gold);
+    letter-spacing: 2px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--eu-blue-dark) 0%, var(--eu-blue-mid) 100%);
+    padding: 40px 24px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★';
+    position: absolute;
+    top: 10px;
+    left: 0; right: 0;
+    font-size: 13px;
+    color: rgba(255,204,0,0.35);
+    letter-spacing: 6px;
+  }
+  .hero::after {
+    content: '★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★';
+    position: absolute;
+    bottom: 10px;
+    left: 0; right: 0;
+    font-size: 13px;
+    color: rgba(255,204,0,0.35);
+    letter-spacing: 6px;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--eu-gold);
+    color: var(--eu-blue-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.75);
+    font-size: 14px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 900px; margin: 0 auto; padding: 28px 16px 48px; }
+
+  /* ── SECTION LABEL ── */
+  .sec-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--eu-blue);
+    border-left: 3px solid var(--eu-gold);
+    padding-left: 10px;
+    margin: 32px 0 12px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    gap: 0;
+    margin-bottom: 4px;
+  }
+  .tl-track {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: var(--border-light);
+    z-index: 0;
+  }
+  .tl-fill {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 2px;
+    background: var(--eu-blue);
+    z-index: 0;
+  }
+  .tl-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    z-index: 1;
+  }
+  .tl-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--eu-blue);
+    background: var(--eu-blue);
+  }
+  .tl-dot.current {
+    background: var(--eu-gold);
+    box-shadow: 0 0 0 2px var(--eu-gold-dark);
+    border-color: #fff;
+  }
+  .tl-date {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--eu-blue);
+    text-align: center;
+    line-height: 1.2;
+  }
+  .tl-step.current .tl-date { color: var(--eu-gold-dark); }
+  .tl-lbl {
+    font-size: 10px;
+    color: var(--text-light);
+    text-align: center;
+    line-height: 1.3;
+    max-width: 80px;
+  }
+  .tl-step.current .tl-lbl {
+    color: var(--eu-blue);
+    font-weight: 600;
+  }
+
+  /* ── GRID HELPERS ── */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+  /* ── BASE CARD ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .card-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--eu-blue);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .card-body {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+  .card-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin-top: 7px;
+  }
+
+  /* ── ACTOR CARDS ── */
+  .actors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .actor {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 14px 14px;
+    border-top: 3px solid var(--eu-blue);
+  }
+  .actor-icon { font-size: 20px; margin-bottom: 6px; }
+  .actor-name { font-size: 12px; font-weight: 700; color: var(--eu-blue); margin-bottom: 5px; }
+  .actor-role { font-size: 12px; color: var(--text-mid); line-height: 1.45; }
+  .actor-art { font-size: 10px; color: var(--text-light); margin-top: 5px; font-style: italic; }
+  .actor.gold { border-top-color: var(--eu-gold-dark); }
+  .actor.teal { border-top-color: var(--teal); }
+  .actor.purple { border-top-color: var(--purple); }
+
+  /* ── SOLIDARITY BOX ── */
+  .sol-box {
+    background: var(--white);
+    border: 1px solid var(--eu-blue);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .sol-header {
+    background: var(--eu-blue);
+    padding: 11px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sol-header-t { font-size: 14px; font-weight: 700; color: #fff; }
+  .sol-header-s { font-size: 11px; color: rgba(255,255,255,0.65); font-style: italic; }
+
+  .sol-kpis { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-light); }
+  .sol-kpi { padding: 14px 18px; }
+  .sol-kpi:first-child { border-right: 1px solid var(--border-light); }
+  .kv { font-size: 26px; font-weight: 700; color: var(--eu-blue); line-height: 1; margin-bottom: 3px; }
+  .ku { font-size: 12px; color: var(--text-mid); margin-bottom: 2px; }
+  .kn { font-size: 11px; color: var(--text-light); }
+
+  .sol-opts { display: grid; grid-template-columns: repeat(5, 1fr); border-bottom: 1px solid var(--border-light); }
+  .sol-opt { padding: 10px 8px; text-align: center; font-size: 11px; color: var(--text-mid); line-height: 1.35; background: var(--eu-blue-pale); }
+  .sol-opt + .sol-opt { border-left: 1px solid var(--border-light); }
+  .sol-opt .opt-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--text-light); margin-bottom: 3px; display: block; }
+  .sol-opt.special { background: var(--purple-light); }
+  .sol-opt.special .opt-label { color: var(--purple); }
+
+  .sol-proc { padding: 12px 18px; }
+  .proc-title { font-size: 11px; font-weight: 700; color: var(--text-mid); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .proc-steps { display: flex; align-items: flex-start; gap: 0; }
+  .proc-step {
+    flex: 1;
+    font-size: 11px;
+    color: var(--text-mid);
+    text-align: center;
+    padding: 0 4px;
+    line-height: 1.35;
+  }
+  .proc-step::before {
+    content: attr(data-n);
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--eu-blue);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 22px;
+    margin: 0 auto 5px;
+  }
+  .proc-arr { align-self: flex-start; padding-top: 3px; color: var(--text-light); flex-shrink: 0; font-size: 14px; }
+
+  /* ── FAIR SHARE ── */
+  .fs-formula-box {
+    background: var(--eu-blue-pale);
+    border: 1px solid var(--eu-blue);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .fs-formula { font-size: 15px; font-weight: 700; color: var(--eu-blue); margin-bottom: 4px; }
+  .fs-note { font-size: 12px; color: var(--text-mid); }
+  .fs-de-box {
+    background: var(--purple-light);
+    border: 1px solid var(--purple-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .fs-de-val { font-size: 28px; font-weight: 700; color: var(--purple); line-height: 1; margin-bottom: 4px; }
+  .fs-de-unit { font-size: 13px; color: var(--purple); font-weight: 600; margin-bottom: 4px; }
+  .fs-de-note { font-size: 11px; color: #5a408a; line-height: 1.4; }
+
+  /* ── CATEGORIES ── */
+  .note-box {
+    background: var(--eu-blue-pale);
+    border: 1px solid var(--eu-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: var(--eu-blue-dark);
+    margin-bottom: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .note-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+  .cat-card {
+    border-radius: 10px;
+    padding: 13px 14px;
+  }
+  .cat-receive { background: var(--coral-light); border: 1px solid var(--coral-border); }
+  .cat-give    { background: var(--green-light); border: 1px solid var(--green-border); }
+  .cat-exempt  { background: var(--amber-light); border: 1px solid var(--amber-border); }
+  .cat-h { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+  .cat-receive .cat-h { color: var(--coral); }
+  .cat-give    .cat-h { color: var(--green); }
+  .cat-exempt  .cat-h { color: var(--amber); }
+  .cat-desc { font-size: 12px; line-height: 1.45; margin-bottom: 6px; }
+  .cat-receive .cat-desc { color: #5a1800; }
+  .cat-give    .cat-desc { color: #0f4a2a; }
+  .cat-exempt  .cat-desc { color: #4a2a00; }
+  .cat-ex { font-size: 10px; font-weight: 600; border-radius: 4px; padding: 2px 7px; display: inline-block; }
+  .cat-receive .cat-ex { background: var(--coral-border); color: var(--coral); }
+  .cat-give    .cat-ex { background: var(--green-border); color: var(--green); }
+  .cat-exempt  .cat-ex { background: var(--amber-border); color: var(--amber); }
+
+  /* ── GRENZVERFAHREN ── */
+  .gv-box {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .gv-header {
+    background: var(--eu-blue-dark);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gv-header-t { font-size: 13px; font-weight: 700; color: #fff; }
+  .gv-header-s { font-size: 11px; color: rgba(255,255,255,.6); }
+  .gv-cols { display: grid; grid-template-columns: 1fr 1fr; }
+  .gv-col { padding: 12px 16px; }
+  .gv-col + .gv-col { border-left: 1px solid var(--border-light); }
+  .gv-col-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-light); margin-bottom: 6px; }
+  .gv-item { font-size: 12px; color: var(--text-mid); line-height: 1.45; display: flex; gap: 6px; margin-bottom: 5px; }
+  .gv-dot { flex-shrink: 0; color: var(--eu-blue); margin-top: 2px; font-size: 10px; }
+  .gv-info {
+    background: var(--teal-light);
+    border-top: 1px solid var(--teal-border);
+    padding: 9px 16px;
+    font-size: 12px;
+    color: var(--teal);
+    line-height: 1.4;
+  }
+  .gv-info strong { color: var(--teal); }
+  .gv-warn {
+    background: var(--amber-light);
+    border-top: 1px solid var(--amber-border);
+    padding: 9px 16px;
+    font-size: 12px;
+    color: var(--amber);
+    line-height: 1.4;
+  }
+
+  /* ── WHO MUST ── */
+  .who-must {
+    background: var(--eu-blue-pale);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .who-must-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--eu-blue); margin-bottom: 8px; }
+  .who-list { display: flex; flex-direction: column; gap: 5px; }
+  .who-item { font-size: 12px; color: var(--text-mid); display: flex; gap: 7px; align-items: flex-start; }
+  .who-badge {
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 1px 6px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .badge-must  { background: #ffcccc; color: #7a0000; }
+  .badge-opt   { background: #dce8f7; color: var(--eu-blue); }
+  .badge-out   { background: #e8f5ed; color: var(--green); }
+
+  /* ── CAPACITY BARS ── */
+  .cap-row { display: flex; align-items: stretch; gap: 8px; }
+  .cap-start {
+    background: var(--eu-blue-pale);
+    border: 1px solid var(--eu-blue);
+    border-radius: 8px;
+    padding: 11px 14px;
+    text-align: center;
+    flex: 1;
+  }
+  .cap-box { flex: 1; background: var(--white); border: 1px solid var(--border-light); border-radius: 8px; padding: 11px 12px; text-align: center; }
+  .cap-num { font-size: 20px; font-weight: 700; color: var(--eu-blue); line-height: 1; }
+  .cap-start .cap-num { color: var(--eu-blue); }
+  .cap-sub { font-size: 11px; color: var(--text-mid); margin-top: 3px; }
+  .cap-yr  { font-size: 10px; color: var(--text-light); margin-top: 2px; }
+  .cap-arr { display: flex; align-items: center; color: var(--text-light); font-size: 14px; flex-shrink: 0; }
+  .cap-note {
+    font-size: 12px;
+    color: var(--text-mid);
+    margin-top: 8px;
+    line-height: 1.5;
+    background: var(--eu-blue-pale);
+    border-radius: 6px;
+    padding: 8px 12px;
+  }
+
+  /* ── COMPARE ── */
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; }
+  .cmp-old .cmp-h { background: #f0ede8; color: #44403a; border-bottom: 1px solid #d4cfc8; }
+  .cmp-new .cmp-h { background: var(--eu-blue); color: #fff; border-bottom: 1px solid var(--eu-blue-mid); }
+  .cmp-new { border-left: 1px solid var(--border-light); }
+  .cmp-h { padding: 9px 14px; font-size: 12px; font-weight: 700; }
+  .ci { font-size: 12px; padding: 6px 14px; color: var(--text-mid); border-bottom: 1px solid var(--border-light); display: flex; gap: 6px; line-height: 1.4; }
+  .ci:last-child { border-bottom: none; }
+  .ci-dot { flex-shrink: 0; margin-top: 2px; }
+
+  /* ── ENFORCEMENT ── */
+  .enf { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .enf-ok  { background: var(--green-light); border: 1px solid var(--green-border); border-radius: 10px; padding: 12px 14px; }
+  .enf-nok { background: var(--red-light); border: 1px solid var(--red-border); border-radius: 10px; padding: 12px 14px; }
+  .enf-h { font-size: 12px; font-weight: 700; margin-bottom: 5px; }
+  .enf-ok  .enf-h { color: var(--green); }
+  .enf-nok .enf-h { color: var(--red); }
+  .enf-b { font-size: 12px; line-height: 1.5; }
+  .enf-ok  .enf-b { color: #0f4a2a; }
+  .enf-nok .enf-b { color: #5a0a0a; }
+
+  /* ── RÜCKFÜHRUNGSPARTNERSCHAFTEN INFO BOX ── */
+  .info-distinction {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--eu-gold-dark);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    margin-top: 10px;
+  }
+  .info-distinction-title { font-size: 12px; font-weight: 700; color: var(--amber); margin-bottom: 4px; }
+  .info-distinction-body { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+
+  /* ── SOURCE FOOTER ── */
+  .source-box {
+    margin-top: 36px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--border-light);
+    font-size: 10px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .actors { grid-template-columns: 1fr 1fr; }
+    .sol-opts { grid-template-columns: 1fr 1fr 1fr; }
+    .sol-opts .sol-opt:nth-child(4) { border-left: none; }
+    .g2, .g3, .g4, .cmp, .enf, .gv-cols { grid-template-columns: 1fr; }
+    .cmp-new { border-left: none; border-top: 1px solid var(--border-light); }
+    .cap-row { flex-wrap: wrap; }
+    .cap-arr { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-logo">
+    <img src="data:image/jpeg;base64,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" alt="FBG Logo">
+  </div>
+  <div class="header-title">
+    GEAS-Reform 2024 – Infografik
+    <span class="eu-stars">★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★</span>
+  </div>
+  <div class="header-right">
+    TIM · Sozialwissenschaften<br>Q2 LK
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">EU-Asylrecht · Reform 2024</div>
+  <h1>Das neue Gemeinsame Europäische Asylsystem</h1>
+  <p>Größte Asylrechtsreform der EU seit 30 Jahren – 1 Richtlinie + 10 Verordnungen · Anwendbar ab 12. Juni / 1. Juli 2026</p>
+</div>
+
+<div class="container">
+
+  <!-- ① ZEITLINIE -->
+  <div class="sec-label">① Zeitlinie</div>
+  <div style="position:relative; padding-bottom: 4px;">
+    <div class="tl-fill"></div>
+    <div class="tl-track"></div>
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Dez. 2023</div>
+        <div class="tl-lbl">Trilög-Einigung Kommission, Rat, EP</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Apr./Mai 2024</div>
+        <div class="tl-lbl">EP &amp; Rat beschließen</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-date">11. Juni 2024</div>
+        <div class="tl-lbl">In Kraft getreten</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-date">27. Feb. 2026</div>
+        <div class="tl-lbl">Bundestag (DE) – 2./3. Lesung</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-date">27. März 2026</div>
+        <div class="tl-lbl">Bundesrat (DE) – abschließende Behandlung</div>
+      </div>
+      <div class="tl-step current">
+        <div class="tl-dot current"></div>
+        <div class="tl-date">12. Juni 2026</div>
+        <div class="tl-lbl">Asylverfahren, Screening, Grenzrückführung anwendbar</div>
+      </div>
+      <div class="tl-step current">
+        <div class="tl-dot current"></div>
+        <div class="tl-date">1. Juli 2026</div>
+        <div class="tl-lbl">Solidaritätsmechanismus (AMMVO), Krisen-VO, Qualifikations-VO anwendbar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② INSTITUTIONELLE ZUSTÄNDIGKEITEN -->
+  <div class="sec-label">② Institutionelle Zuständigkeiten – wer entscheidet was?</div>
+  <div class="actors">
+    <div class="actor">
+      <div class="actor-icon">🇪🇺</div>
+      <div class="actor-name">EU-Kommission</div>
+      <div class="actor-role">Bewertet jährlich die Migrationslage aller Mitgliedstaaten. Erlässt Durchführungsbeschluss zur Kategorisierung (bis <strong>15. Oktober</strong> jedes Jahres). Schlägt Solidaritätspool vor. Leitet Vertragsverletzungsverfahren ein.</div>
+      <div class="actor-art">Art. 9 &amp; 11 AMMVO</div>
+    </div>
+    <div class="actor gold">
+      <div class="actor-icon">⚖️</div>
+      <div class="actor-name">Rat der EU</div>
+      <div class="actor-role">Beschließt den Solidaritätspool mit <strong>qualifizierter Mehrheit</strong> – kein Einstimmigkeitsprinzip, kein Vetorecht. Übernimmt Kommissionsvorschlag oder modifiziert ihn.</div>
+      <div class="actor-art">Art. 57 AMMVO</div>
+    </div>
+    <div class="actor teal">
+      <div class="actor-icon">🔗</div>
+      <div class="actor-name">EU-Solidaritätskoordinator</div>
+      <div class="actor-role">Neue dauerhafte EU-Stelle. Koordiniert Umsetzung des Mechanismus, verteilt Beiträge an belastete Staaten, ist zentrale Anlaufstelle für alle Mitgliedstaaten.</div>
+      <div class="actor-art">Art. 15 AMMVO</div>
+    </div>
+    <div class="actor purple">
+      <div class="actor-icon">🏛️</div>
+      <div class="actor-name">Hochrangiges Solidaritätsforum</div>
+      <div class="actor-role">Jährliches Treffen aller Mitgliedstaaten (Art. 13 AMMVO). Mitgliedstaaten sagen dort förmlich ihre konkreten Beiträge für den kommenden Jahreszyklus zu.</div>
+      <div class="actor-art">Art. 13 AMMVO</div>
+    </div>
+  </div>
+
+  <!-- ③ SOLIDARITÄTSMECHANISMUS -->
+  <div class="sec-label">③ Solidaritätsmechanismus – Zahlen, Optionen, Ablauf</div>
+  <div class="sol-box">
+    <div class="sol-header">
+      <span class="sol-header-t">Jährlicher Solidaritätspool (Mindestziel)</span>
+      <span class="sol-header-s">Art. 56 ff. AMMVO – verpflichtend für alle Mitgliedstaaten</span>
+    </div>
+    <div class="sol-kpis">
+      <div class="sol-kpi">
+        <div class="kv">30.000</div>
+        <div class="ku">Relocations / Jahr (Personenübernahmen)</div>
+        <div class="kn">Übernahme Schutzsuchender aus belasteten EU-Staaten</div>
+      </div>
+      <div class="sol-kpi">
+        <div class="kv">600 Mio. €</div>
+        <div class="ku">Finanzbeiträge / Jahr</div>
+        <div class="kn">Alternative zu Personenübernahmen; Beschluss per qualifizierter Mehrheit des Rates</div>
+      </div>
+    </div>
+    <div class="sol-opts">
+      <div class="sol-opt">
+        <span class="opt-label">Option A</span>
+        Schutzsuchende aufnehmen (Relocation)
+      </div>
+      <div class="sol-opt">
+        <span class="opt-label">Option B</span>
+        Finanzbeitrag leisten
+      </div>
+      <div class="sol-opt">
+        <span class="opt-label">Option C</span>
+        Grenzbeamte &amp; Personal entsenden
+      </div>
+      <div class="sol-opt">
+        <span class="opt-label">Option D</span>
+        Projekte in Drittstaaten finanzieren
+      </div>
+      <div class="sol-opt special">
+        <span class="opt-label" style="color:var(--purple)">Option E</span>
+        Alternative Solidaritätsmaßnahmen (z. B. Rückkehrhilfe, Personal, Kapazitätsaufbau)
+      </div>
+    </div>
+    <div class="sol-proc">
+      <div class="proc-title">Verfahrensablauf</div>
+      <div class="proc-steps">
+        <div class="proc-step" data-n="1">Kommission erstellt jährlichen Migrationsbericht</div>
+        <div class="proc-arr">›</div>
+        <div class="proc-step" data-n="2">Kommission erlässt Durchführungsbeschluss zur Kategorisierung (bis 15. Okt.)</div>
+        <div class="proc-arr">›</div>
+        <div class="proc-step" data-n="3">Solidaritätsforum: Mitgliedstaaten sagen Beiträge förmlich zu</div>
+        <div class="proc-arr">›</div>
+        <div class="proc-step" data-n="4">Rat beschließt Pool per qual. Mehrheit</div>
+        <div class="proc-arr">›</div>
+        <div class="proc-step" data-n="5">Koordinator verteilt Beiträge an belastete Staaten</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALTERNATIVE SOLIDARITÄTSMASNAHMEN ERKLÄRUNG -->
+  <div class="info-distinction" style="margin-top:10px;">
+    <div class="info-distinction-title">⬆ Option E: Alternative Solidaritätsmaßnahmen (Art. 65 AMMVO) – Beispiel Rückkehrhilfe</div>
+    <div class="info-distinction-body">
+      Die AMMVO 2024 kennt drei Hauptkategorien der Solidarität (Art. 56 Abs. 2): <strong>(A) Übernahmen</strong>, <strong>(B) Finanzbeiträge</strong> und <strong>(C) alternative Solidaritätsmaßnahmen</strong> (Art. 65 AMMVO). Letztere umfassen u. a. operative Unterstützung, Entsendung von Personal und Kapazitätsaufbau – auch im Bereich Grenzmanagement. Eine besondere Unterform ist die <strong>Unterstützung bei Rückführungen</strong>: Ein Mitgliedstaat übernimmt dabei die Rückführungsarbeit für einen überlasteten Partnerstaat – durch politischen Dialog mit Drittstaaten zur Rückübernahme, Unterstützung freiwilliger Ausreisen aus dem Hoheitsgebiet des begünstigten Staates und Hilfe bei der Ausstellung von Reisedokumenten. Die rückzuführenden Personen befinden sich dabei bereits im begünstigten Staat – es geht also um Unterstützung beim Vollzug, nicht um eigene Aufnahme.
+      <br><br>
+      <strong>Hinweis zur Entstehungsgeschichte:</strong> Im Kommissionsvorschlag 2020 wurde diese Unterform noch explizit als „Rückkehrpatenschaft" bezeichnet. In der finalen AMMVO 2024 ist sie unter dem allgemeinen Begriff „alternative Solidaritätsmaßnahmen" (Art. 65 AMMVO) subsumiert – kein eigenständiger Verordnungsbegriff mehr.
+      <br><br>
+      <strong>Abgrenzung zu EU-Migrationsabkommen mit Drittstaaten:</strong> Davon zu unterscheiden sind die bilateral von der Kommission ausgehandelten <em>Migrationspartnerschaften</em> (z. B. EU–Tunesien Dez. 2023, EU–Ägypten März 2024). Diese sind ein eigenständiges außenpolitisches Instrument außerhalb des GEAS-Gesetzgebungspakets – inhaltlich verwandt, rechtlich aber getrennt.
+    </div>
+  </div>
+
+  <!-- ④ FAIR SHARE / DEUTSCHLAND -->
+  <div class="sec-label">④ Verteilschlüssel – „Fair Share"</div>
+  <div class="g2">
+    <div class="fs-formula-box">
+      <div class="card-title" style="margin-bottom:8px;">Berechnungsformel</div>
+      <div class="fs-formula">50 % Bevölkerungszahl &nbsp;+&nbsp; 50 % BIP</div>
+      <div class="fs-note" style="margin-top:6px;">Größere und wirtschaftsstärkere Staaten tragen proportional mehr. Im Vorjahr bereits erbrachte Leistungen (eigene Ankünfte) können gegengerechnet werden. Mitgliedstaaten können freiwillig über ihren Anteil hinaus beitragen.</div>
+    </div>
+    <div class="fs-de-box">
+      <div class="card-title" style="color:var(--purple); margin-bottom:8px;">Deutschland – Beispiel</div>
+      <div class="fs-de-val">≈ 6.600</div>
+      <div class="fs-de-unit">Personen / Jahr</div>
+      <div class="fs-de-note">Entspricht ca. 22 % des EU-Minimalpools (30.000). Kann durch Vorjahresankünfte reduziert werden. Alternative: Zahlung statt Aufnahme (20.000 € / Person – gesetzlich fixierter Umrechnungswert gem. Art. 57 AMMVO; kein Strafgeld, sondern Gleichwertigkeitsformel zwischen Personenübernahmen und Finanzbeiträgen). Deutschland zählt zu den Staaten, die von Migrationsdruck bedroht sind, und ist daher beitragspflichtig.</div>
+    </div>
+  </div>
+
+  <!-- ⑤ MITGLIEDSTAATENKATEGORIEN -->
+  <div class="sec-label">⑤ Drei Kategorien der Mitgliedstaaten</div>
+  <div class="note-box">
+    <div class="note-icon">⚠</div>
+    <div><strong>Wer entscheidet?</strong> Die EU-Kommission legt die Zuordnung per <strong>Durchführungsbeschluss</strong> (Art. 11 AMMVO) fest – jährlich bis zum 15. Oktober. Zuvor werden betroffene Mitgliedstaaten konsultiert. Der Rat nimmt den Beschluss zur Kenntnis, kann aber die Kategorisierung nicht überstimmen. Grundlage ist eine umfassende quantitative und qualitative Bewertung (Asylanträge, irreguläre Einreisen, Sekundärmigration, Kapazitäten u. a.).</div>
+  </div>
+  <div class="g3">
+    <div class="cat-card cat-receive">
+      <div class="cat-h">Unter Migrationsdruck</div>
+      <div class="cat-desc">Erhalten Solidaritätsleistungen aus dem Pool. Hohe Ankünfte oder unverhältnismäßig viele Seenotrettungsausschiffungen.</div>
+      <div style="font-size:11px; color:#5a1800; margin-bottom:6px;">→ Haben Anspruch auf Relocation, Finanzbeiträge, alternative Solidarität</div>
+      <div class="cat-ex">Spanien · Italien · Griechenland · Zypern (Stand Nov. 2025)</div>
+      <div style="font-size:10px; color:#5a1800; margin-top:4px;">Griechenland und Zypern: wegen hoher Ankünfte. Spanien und Italien: wegen unverhältnismäßig vieler Seenotrettungsausschiffungen.</div>
+    </div>
+    <div class="cat-card cat-give">
+      <div class="cat-h">Von Migrationsdruck bedroht <span style="font-weight:400;font-style:italic;">(Art. 11 AMMVO: „Gefahr von Migrationsdruck")</span></div>
+      <div class="cat-desc">Müssen Solidaritätsbeiträge leisten (Form frei wählbar). Werden jährlich neu bewertet. Der Begriff beschreibt ihre eigene Gefährdungslage – faktisch sind diese Staaten <strong>beitragspflichtig</strong>, nicht Empfänger.</div>
+      <div style="font-size:11px; color:#0f4a2a; margin-bottom:6px;">→ Beitragspflichtig; können bei eigener Überlastung in Kategorie 1 wechseln</div>
+      <div class="cat-ex">Deutschland · Belgien · Bulgarien · Estland · Frankreich · Irland · Kroatien · Lettland · Litauen · Niederlande · Polen · Finnland (Stand Nov. 2025)</div>
+    </div>
+    <div class="cat-card cat-exempt">
+      <div class="cat-h">Ausgeprägte Migrationslage</div>
+      <div class="cat-desc">Können bei der Kommission eine Kürzung oder vollständigen Erlass ihrer Solidaritätspflicht beantragen. Hohe kumulative Belastung über mehrere Jahre.</div>
+      <div style="font-size:11px; color:#4a2a00; margin-bottom:6px;">→ Kein Anspruch auf Solidarität, aber Entlastung von Pflichten möglich</div>
+      <div class="cat-ex">Österreich · Polen · Bulgarien · Tschechien · Estland · Kroatien (Stand Nov. 2025)</div>
+    </div>
+  </div>
+
+  <!-- ⑥ ASYLGRENZVERFAHREN -->
+  <div class="sec-label">⑥ Asylgrenzverfahren – Zuständigkeit, Ort, Behörden</div>
+  <div class="gv-box">
+    <div class="gv-header">
+      <span class="gv-header-t">Grenzverfahren nach Art. 43 ff. Asylverfahrensverordnung</span>
+      <span class="gv-header-s">Zuständigkeit: national · Ort: EU-Hoheitsgebiet</span>
+    </div>
+    <div class="gv-cols">
+      <div class="gv-col">
+        <div class="gv-col-label">Zuständigkeit &amp; Durchführung</div>
+        <div class="gv-item"><span class="gv-dot">◆</span><span><strong>Ersteinreiseprinzip bleibt:</strong> Zuständig ist der Mitgliedstaat, über den die Person zuerst in die EU eingereist ist.</span></div>
+        <div class="gv-item"><span class="gv-dot">◆</span><span>Verfahren werden von <strong>nationalen Behörden</strong> durchgeführt (in DE: BAMF – Bundesamt für Migration und Flüchtlinge).</span></div>
+        <div class="gv-item"><span class="gv-dot">◆</span><span>Ausschließlich auf <strong>EU-Hoheitsgebiet</strong> – keine Auslagerung in Drittstaaten.</span></div>
+        <div class="gv-item"><span class="gv-dot">◆</span><span>Unabhängiger <strong>Monitoring-Mechanismus</strong> überwacht Grundrechte je Mitgliedstaat.</span></div>
+      </div>
+      <div class="gv-col">
+        <div class="gv-col-label">Ort &amp; Unterbringung</div>
+        <div class="gv-item"><span class="gv-dot">◆</span><span>Spezielle <strong>Aufnahmeeinrichtungen an den EU-Außengrenzen</strong> (z. B. griechische Inseln, Lampedusa, Ceuta).</span></div>
+        <div class="gv-item"><span class="gv-dot">◆</span><span>Während des Verfahrens gilt die <strong>Fiktion der Nicht-Einreise</strong> – Personen befinden sich zwar physisch im Land, gelten aber rechtlich als noch nicht eingereist.</span></div>
+        <div class="gv-item"><span class="gv-dot">◆</span><span>Ausreise in Drittstaaten bleibt möglich (≠ Haft), aber Einreise in EU-Inland ist zunächst untersagt.</span></div>
+        <div class="gv-item"><span class="gv-dot">◆</span><span><strong>In Deutschland:</strong> Grenzverfahren nur an Flughäfen und Seehäfen (keine Land-Außengrenze zur EU).</span></div>
+      </div>
+    </div>
+    <div class="gv-info">
+      <strong>Wer muss ins Grenzverfahren?</strong><br>
+      <span style="color:var(--teal); font-weight:600;">Verpflichtend:</span> Herkunftsland mit EU-weiter Schutzquote <strong>≤ 20 %</strong> (Eurostat-Daten, EU-weit, nicht national); Identitätstäuscher; Sicherheitsgefahr für öffentliche Ordnung oder nationale Sicherheit.<br>
+      <span style="color:var(--teal); font-weight:600;">Optional für Mitgliedstaaten:</span> Personen aus sicheren Herkunfts- oder Drittstaaten.<br>
+      <span style="color:var(--teal); font-weight:600;">Vom Grenzverfahren ausgenommen:</span> Herkunftsland mit EU-weiter Schutzquote <strong>&gt; 20 %</strong> → reguläres Asylverfahren im Inland; unbegleitete Minderjährige (ohne Sicherheitsgefahr); Personen mit besonderen Verfahrens- oder Unterbringungsbedürfnissen (z. B. Schwangere, Menschen mit Behinderungen), wenn diese Bedürfnisse im Grenzverfahren nicht erfüllt werden können.<br>
+      <span style="font-size:11px; color:var(--teal); opacity:0.85;">Hinweis: Familien mit Kindern sind nicht automatisch ausgenommen.</span>
+    </div>
+    <div class="gv-warn">
+      <strong>Dauer:</strong> Regulär 12 Wochen (inkl. Rechtsbehelfsverfahren). Verlängerung auf 16 Wochen nur bei vorheriger Relocation im Solidaritätsmechanismus. Bei Ablehnung schließt sich unmittelbar das Rückkehrgrenzverfahren an.
+    </div>
+  </div>
+
+  <!-- ⑦ KAPAZITÄTSOBERGRENZEN -->
+  <div class="sec-label">⑦ Grenzverfahren – Gestaffelte EU-weite Kapazitätsobergrenzen</div>
+  <div class="cap-row">
+    <div class="cap-start">
+      <div class="cap-num">30.000</div>
+      <div class="cap-sub">Verfahrens-Plätze EU-weit</div>
+      <div class="cap-yr">Infrastrukturkapazität gesamt</div>
+    </div>
+    <div class="cap-arr">›</div>
+    <div class="cap-box">
+      <div class="cap-num">60.000</div>
+      <div class="cap-sub">Anträge max. EU-weit</div>
+      <div class="cap-yr">Jahr 1 (ab Juni 2026)</div>
+    </div>
+    <div class="cap-arr">›</div>
+    <div class="cap-box">
+      <div class="cap-num">90.000</div>
+      <div class="cap-sub">Anträge max. EU-weit</div>
+      <div class="cap-yr">Jahr 2 (ab Juni 2027)</div>
+    </div>
+    <div class="cap-arr">›</div>
+    <div class="cap-box">
+      <div class="cap-num">120.000</div>
+      <div class="cap-sub">Anträge max. EU-weit</div>
+      <div class="cap-yr">Jahr 3 (ab Juni 2028)</div>
+    </div>
+  </div>
+  <div class="cap-note">Schrittweiser Aufbau soll Mitgliedstaaten Zeit zur Schaffung der nötigen Infrastruktur geben. Erst nach Jahr 3 ist die Vollkapazität von 120.000 Grenzverfahren/Jahr EU-weit erreicht.</div>
+
+  <!-- ⑧ DUBLIN → AMMVO VERGLEICH -->
+  <div class="sec-label">⑧ Zuständigkeitsverteilung: Dublin III → AMMVO</div>
+  <div class="cmp">
+    <div class="cmp-old">
+      <div class="cmp-h">Dublin III (bis 2026)</div>
+      <div class="ci"><span class="ci-dot">–</span><span>Ersteinreiseland fast immer allein zuständig → strukturelle Überlastung Südeuropas</span></div>
+      <div class="ci"><span class="ci-dot">–</span><span>Kein verbindlicher Solidaritätsmechanismus – freiwillige Hilfe oft ausgeblieben</span></div>
+      <div class="ci"><span class="ci-dot">–</span><span>Nationale Alleingänge und Grenzschließungen faktisch möglich</span></div>
+      <div class="ci"><span class="ci-dot">–</span><span>2008–2017: 1/3 der Staaten trug 90 % der Last</span></div>
+    </div>
+    <div class="cmp-new">
+      <div class="cmp-h">AMMVO (ab 2026)</div>
+      <div class="ci"><span class="ci-dot">+</span><span>Ersteinreiseprinzip bleibt, wird aber durch verpflichtende Solidarität ausgeglichen</span></div>
+      <div class="ci"><span class="ci-dot">+</span><span>Solidarität verpflichtend für alle – Form (Aufnahme / Geld / Patenschaft) frei wählbar</span></div>
+      <div class="ci"><span class="ci-dot">+</span><span>Nationale Alleingänge rechtlich ausgeschlossen (EuGH-Rspr.)</span></div>
+      <div class="ci"><span class="ci-dot">~</span><span>Kritik (SVR, PRO ASYL): Freikauf durch Zahlung möglich – echte Umverteilung fraglich</span></div>
+    </div>
+  </div>
+
+  <!-- ⑨ DURCHSETZUNG -->
+  <div class="sec-label">⑨ Durchsetzung &amp; aktuelle Konflikte</div>
+  <div class="enf">
+    <div class="enf-ok">
+      <div class="enf-h">Sanktionsinstrument der EU</div>
+      <div class="enf-b">Wer Solidaritätspflichten nicht erfüllt und keine anerkannte Ausnahmesituation vorweist, riskiert ein <strong>Vertragsverletzungsverfahren</strong> der EU-Kommission. Erste Bewertung der Einhaltung: Juli 2026 (Kommissionsangabe Nov. 2025).</div>
+    </div>
+    <div class="enf-nok">
+      <div class="enf-h">Aktuelle Verweigerungshaltungen</div>
+      <div class="enf-b"><strong>Polen, Ungarn, Slowakei</strong> verweigern Solidaritätsbeiträge offen. Polen und Ungarn beantragen auch keine Ausnahmeregelung – stehen damit ab Sommer 2026 potenziell vor einem Vertragsverletzungsverfahren.</div>
+    </div>
+  </div>
+
+  <!-- SOURCE -->
+  <div class="source-box">
+    <strong>Quellen (alle überprüft, Stand Mai 2026):</strong> EU-Rat (consilium.europa.eu) · Europäisches Parlament · AMMVO (VO (EU) 2024/1351), Art. 9, 11, 13, 15, 56 ff., 65 · EU-Kommission FAQ Migrationspakt (home-affairs.ec.europa.eu) · Bundesinnenministerium (bmi.bund.de) · BAMF (bamf.de) · bpb.de (Hintergrund aktuell, Juli 2024) · ZDF (Mai 2024) · Euronews (Nov. 2025) · Verfassungsblog (Juni 2025) · SVR Migration (Juni 2025) · EUR-Lex (VO (EU) 2024/1351 Volltext)
+  </div>
+
+</div><!-- /container -->
+</body>
+</html>
